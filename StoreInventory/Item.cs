@@ -27,15 +27,10 @@ namespace StoreInventory
             Stock = stock;
         }
 
-        // Refactored: Method for input validation extracted to its own method
+        // Refactored: Method for input validation extracted to its own method and used ternary operator
         private bool ValidateInput(int id, string name, decimal price, int stock)
         {
-            if (id <= 0 || string.IsNullOrEmpty(name) || price <= 0 || stock < 0)
-            {
-                return false;
-            }
-
-            return true;
+            return (id > 0 && !string.IsNullOrEmpty(name) && price > 0 && stock >= 0) ? true : false;
         }
     }
 }

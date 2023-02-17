@@ -9,14 +9,14 @@ namespace StoreInventory
     // Refactored: Display-related methods extracted to a separate class
     public class ItemDisplay
     {
-        // Refactored: Method name changed to ShowItemInformation
+        // Refactored: Method name changed to ShowItemInformation and used String Interpolation
         public void ShowItemInformation(Item item)
         {
             Console.WriteLine("Item Information");
-            Console.WriteLine("ID: " + item.Id);
-            Console.WriteLine("Name: " + item.Name);
-            Console.WriteLine("Price: " + item.Price);
-            Console.WriteLine("Stock: " + item.Stock);
+            Console.WriteLine($"ID: {item.Id}");
+            Console.WriteLine($"Name: {item.Name}");
+            Console.WriteLine($"Price: {item.Price}");
+            Console.WriteLine($"Stock: {item.Stock}");
         }
     }
 }
