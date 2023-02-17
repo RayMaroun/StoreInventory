@@ -19,7 +19,11 @@ namespace StoreInventory
         // Refactored: Method name changed to SetPrice
         public void SetPrice(Item item, decimal newPrice)
         {
-            item.Price = newPrice;
+            item.Price = newPrice >= 0 ? newPrice : item.Price;
+            if (newPrice < 0)
+            {
+                Console.WriteLine("Price update failed: New price cannot be negative.");
+            }
         }
     }
 }
